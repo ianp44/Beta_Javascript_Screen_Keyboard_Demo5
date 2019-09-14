@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit Div Test Page</title>
+<!--
+<link href="my_access.css" rel="stylesheet" type="text/css">
+-->
+
+<!--
+<p>
+See www.pouncy.co.uk for author's website.
+COPYRIGHT NOTICE.: The code associated with this page is copyright (C) by Ian Pouncy 14/9/19.<br>
+under the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007 , see Free Software Foundation, Inc. <a href="http://fsf.org" title="Link to Free software Foundation Website">http://fsf.org</a><br>
+This means you can use it if you want under the terms of that licence.<br>
+This source code has been registered on github (user name Ianp44) on 14/9/19<br>
+-->
+
+
+
+<script src= "edit_div_cd3.js"></script>
+
+<script>
+
+function zinit7(){
+zinit();
+zinit3();
+
+}
+/*
+function init_edit_div_tst(){
+
+;
+}
+*/
+</script>
+
+
+<!--
+<style type="text/css">
+
+//==
+.edit_div_class3{
+background-color:white;
+font-family: "Courier New";
+font-size: 12pt;
+color: #000;
+border: 2px solid #00F;
+position: absolute;
+z-index: 4;
+}
+
+.keyb_div_class3
+
+{
+top:5px;
+left:5px;
+background-color:white;
+
+font-family: "Courier New";
+font-size: 12pt;
+color: #000;
+border: 2px solid #00F;
+position: relative;
+/*
+z-index: 4;
+*/
+}
+
+
+.edit_div_class3_2{
+top:5px;
+left:5px;
+background-color:white;
+
+font-family: "Courier New";
+font-size: 12pt;
+color: #000;
+border: 2px solid #00F;
+position: relative;
+z-index: 4;
+}
+
+
+//==
+
+
+.divclass{
+position:absolute;
+width: 100px;
+height:100px;
+border: 1px solid black;
+top: 300px;
+left: 100px;
+visibility:hidden;
+/*
+background-color:red;
+visibility:hidden;
+*/
+}
+/*
+.divclass:hover{
+background-color:green;
+visibility:visible;
+
+}
+*/
+.divclass2{
+position:absolute;
+width: 100px;
+height:1.3em;
+border: 1px solid black;
+top: 300px;
+left: 100px;
+overflow:hidden;
+}
+/*
+.divclass2:hover{
+height:100px;
+
+}
+*/
+
+.testd_topc {
+border: 1px solid #900;
+position: absolute;
+height: 1.3em;
+width: 100px;
+left: 500px;
+top: 200px;
+}
+#testd_dropc {
+border: 1px solid #00F;
+position: absolute;
+height: 100px;
+width: 100px;
+left: 500px;
+top: 200px;
+}
+</style>
+-->
+<script src="orgsite.js"> </script>
+
+<link href="orgsite.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="zinit7()">
+<!--
+<b>Ian's Javascript Drop Down Menu Demo Pages</b><br>
+(Version 5.0 20/9/14 )<br>
+<a href="../default.htm">Up to public site</a><br><br>
+<p id="demo1"> demo1 text </p>
+-->
+<span id="spanid">Span text</span>
+<div id="maindiv" class="maindivclass">
+
+
+
+
+
+
+<center>
+
+
+<h1>Edit Window Screen Keyboard<br> Beta Test/Demo   </h1>
+
+
+<br><br>
+<b>
+Version 7.08 2/9/19.
+<br>
+<br>
+Type the keyboard buttons with the
+<br>
+mouse or equivalent
+to see the text come up in
+<br>
+the text box.
+<br>
+<br>
+The Scale up and Scale Down buttons
+will scale the
+<br>
+keyboard size up and
+down.
+<br>
+<br>
+The clear all button
+will clear <br>
+the text box.
+
+<br>
+<br>
+
+</b>
+
+
+
+
+<!--
+<a href="sys_test1.php" title="Link to Sys Test Index Page" target="_top">Link to Sys Test (Index) Page</a><br>
+-->
+
+
+<!--
+<button onclick="init_edit_page()">Init Page</button><br>
+-->
+
+
+<b>Error Report:</b><span id="errtxt">
+error text
+
+</span><br>
+
+<!--
+
+<b>Search Report:</b><span id="srch_txt">
+search result
+
+</span><br>
+-->
+
+<b>Test Report:</b><span id="test_txt1">
+Test Report text
+
+</span><br>
+<br>
+<br>
+
+<center>
+<b>Data Edit Form</b><br>
+
+
+
+
+
+<form id="ajax_rep_form3" >
+
+
+<!--
+<br>
+
+<b>Data Text :</b>
+<br>
+-->
+<textarea rows="9" cols="50  "name="form_area_txt3">
+Message text.(3)
+You can edit it and click submit.
+
+</textarea>
+<br>
+<br>
+
+
+</form>
+<br>
+</center>
+<!--
+<br>
+<br>
+<br>
+
+-->
+<b>edit_div_box1:</b><span id="edit_div_box1">
+edit_div_box1 txt
+
+</span><br>
+
+<!--
+
+<br>
+
+<b>Test Arguments:</b><br>
+<form id="test_form">
+<b>Arg 1:</b><input type="text" name="arg1" size="10" value=""><br>
+<b>Arg 2:</b><input type="text" name="arg2" size="10" value=""><br>
+<b>Arg 3:</b><input type="text" name="arg3" size="10" value=""><br>
+<b>Arg 4:</b><input type="text" name="arg4" size="10" value=""><br>
+<b>Arg 5:</b><input type="text" name="arg5" size="10" value=""><br>
+<b>Arg 6:</b><input type="text" name="arg6" size="10" value=""><br>
+<b>Arg 7:</b><input type="text" name="arg7" size="10" value=""><br>
+
+</form><br>
+<br>
+-->
+<!--
+<button onclick="do_tst_button_a1()">Button A  </button> Test Button A<br>
+-->
+
+<!--
+
+<button onclick="zslide_ar_tst1(0)">SLide test button</button> Array disp button.<br>
+<button onclick="zslide_ar_tst1(1)">SLide test button</button> + non zero slide <br>
+
+<button onclick="do_tst_button1()">Button 1</button> Test Button 1.<br>
+
+-->
+
+<!--
+<br>
+
+<br>
+
+KB Board DIV:
+
+<br>
+-->
+<div id="keyb_id3" class="keyb_div_class3">
+kb3 div text
+
+
+</div>
+
+
+
+<br>
+<br>
+<br>
+
+</div>
+
+<br>
+<br>
+
+
+<span id="zwin_div_list_id">
+zwin_div_list_id text<br>
+
+</span>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

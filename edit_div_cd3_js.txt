@@ -1,0 +1,1332 @@
+
+/*
+screen keyboard
+demo javascript include
+file
+8/9/19
+
+*/
+
+/*
+<!--
+<p>
+See www.pouncy.co.uk for author's website.
+COPYRIGHT NOTICE.: The code associated with this page is copyright (C) by Ian Pouncy 14/9/19.<br>
+under the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007 , see Free Software Foundation, Inc. <a href="http://fsf.org" title="Link to Free software Foundation Website">http://fsf.org</a><br>
+This means you can use it if you want under the terms of that licence.<br>
+This source code has been registered on github (user name Ianp44) on 14/9/19<br>
+-->
+
+*/
+
+/*
+
+
+.edit_div_class3{
+
+font-family: "Courier New";
+font-size: 12pt;
+color: #000;
+border: 2px solid #00F;
+position: absolute;
+z-index: 4;
+}
+
+.edit_div_class3_2{
+top:5px;
+left:5px;
+
+font-family: "Courier New";
+font-size: 12pt;
+color: #000;
+border: 2px solid #00F;
+position: relative;
+z-index: 4;
+}
+
+
+*/
+//==
+function get_glob_font_sc3(){
+
+return(glob_kb_sc);
+}
+//==
+function set_kb_sc3(sc3){
+
+
+z=document.getElementById("keyb_id3");
+/*
+ltxt=disp_edit_div3(line_org,colnum3,rownum3);
+*/
+
+z.style.fontSize=sc3+'pt';
+
+
+
+}
+
+//==
+
+/*
+keyboard routines
+
+*/
+//==
+
+function tst_lar3_1(){
+var res;
+
+res=['tkey','tkeycd'];
+return(res);
+
+}
+
+//==
+
+function tst_lar3_1_key_row1(){
+var res;
+
+res=
+
+[
+['a','a1'],
+
+['b','b1'],
+['c','b2'],
+['d','b3'],
+['e','b4'],
+
+['tkey','tkeycd']
+];
+
+return(res);
+
+}
+//==
+function sys_err(ltxt){
+var z;
+var ltxt2;
+
+z=document.getElementById("errtxt");
+/*
+ltxt=disp_edit_div3(line_org,colnum3,rownum3);
+*/
+ltxt2='Error:';
+ltxt2+=ltxt;
+
+
+z.innerHTML=ltxt2;
+
+
+
+}
+
+//==
+function tst_lar3_1_all_keys1_5(){
+var res;
+
+res=
+[
+
+//=
+
+[
+['a','a1'],
+
+['b','b1'],
+['c','b2'],
+['d','b3'],
+['e','b4'],
+
+['tkey','tkeycd']
+],
+
+//=
+[
+['a2','a1_2'],
+
+['b2','b1_2'],
+['c2','b2_2'],
+['d2','b3_2'],
+['e2','b4_2'],
+
+['tkey2','tkeycd2']
+]
+//==
+
+
+];
+
+return(res);
+
+}
+
+//==
+
+function tst_lar3_1_all_keys1(){
+var res;
+
+res=
+[
+[
+//=
+['clear all','cls','c','red'],
+['scale up','sup1','c','green'],
+['scale down','dwn1','c','green']
+
+],
+
+[
+
+
+['1','1'],
+
+['2','2'],
+['3','3'],
+['4','4'],
+['5','5'],
+['6','6'],
+['7','7'],
+['8','8'],
+['9','9']
+/*
+['p','p']
+*/
+]
+,
+[
+
+
+['q','q'],
+
+['w','w'],
+['e','e'],
+['r','r'],
+['t','t'],
+['y','y'],
+['u','u'],
+['i','i'],
+['o','o'],
+['p','p']
+
+
+/*
+['tkey','tkeycd']
+*/
+
+],
+
+//=
+[
+
+['a','a'],
+
+['s','s'],
+['d','d'],
+['f','f'],
+['g','g'],
+['h','h'],
+['j','j'],
+['k','k'],
+['l','l'],
+/*
+['p','p'],
+*/
+
+['NL','\\n','c','blue']
+],
+
+//=
+[
+['z','z'],
+
+['x','x'],
+['c','c'],
+['v','v'],
+['b','b'],
+['n','n'],
+['m','m']
+/*
+['tkey2','tkeycd2']
+*/
+],
+
+//==
+[
+
+['&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',' ']
+
+]
+
+];
+
+return(res);
+
+}
+
+//===
+/*
+document.forms["ajax_rep_form3"]["form_area_txt3"].value=ltxt2;
+
+*/
+arg
+var sc_ratio3;
+var sc_max;
+var sc_min;
+var glob_kb_sc;
+
+function init_kb_sc3(){
+
+
+glob_kb_sc=25;
+
+sc_ratio3=1.2;
+sc_max=70;;
+sc_min=5;;
+
+}
+
+
+function sc_glob_kb_sc(sw){
+
+
+
+if(sw==1){
+glob_kb_sc*=sc_ratio3;
+if(glob_kb_sc>sc_max){
+glob_kb_sc=sc_max;
+}
+
+}
+else
+
+if(sw==0){
+glob_kb_sc*=(1/sc_ratio3);
+if(glob_kb_sc<sc_min){
+glob_kb_sc=sc_min;
+}
+
+}
+else {
+sys_err('disallowed value of sw in sc_glob_kb_sc');
+}
+
+}
+//==
+
+function do_key1(chr_str1){
+
+/*
+document.forms["ajax_rep_form3"]["form_area_txt3"].value=chr_str1;
+*/
+
+if(chr_str1=='sup1'){
+sc_glob_kb_sc(1);
+test_keyb_disp1();
+}
+
+
+else
+if(chr_str1=='dwn1'){
+sc_glob_kb_sc(0);
+test_keyb_disp1();
+}
+
+else {
+
+
+
+add_char_text_area(chr_str1,"ajax_rep_form3","form_area_txt3");
+
+}
+
+
+
+
+}
+
+//==
+function add_char_text_area(chr_str1,frmid,txt_area_id){
+var ftxt;
+
+
+ftxt=(document.forms[frmid][txt_area_id].value);
+/*
+document.forms["ajax_rep_form3"]["form_area_txt3"].value=chr_str1;
+*/
+
+if(chr_str1=='cls'){
+ftxt='';
+
+}else {
+ftxt+=chr_str1;
+}
+
+document.forms[frmid][txt_area_id].value=ftxt;
+
+
+}
+
+//==
+
+
+function test_keyb_disp1(){
+var z;
+var lar3;
+
+var ltxt2;
+var ltxt3_2;
+
+ltxt2='';
+
+/*
+ltxt2='hello 123';
+ltxt2+='<br>\n';
+
+*/
+
+/*
+
+lar3=tst_lar3_1();
+
+ltxt3_2=disp_key1_3(lar3);
+*/
+
+/*
+lar3=tst_lar3_1_key_row1();
+
+ltxt3_2=disp_key_row1_3(lar3);
+*/
+
+
+lar3=tst_lar3_1_all_keys1();
+
+ltxt3_2=disp_all_keys_1_3(lar3,0);
+
+
+ltxt2+=ltxt3_2;
+ltxt2+='@@';
+ltxt2+='\n';
+
+/*
+set_ajax_reply_box(ltxt2);
+*/
+
+z=document.getElementById("keyb_id3");
+/*
+ltxt=disp_edit_div3(line_org,colnum3,rownum3);
+*/
+
+z.innerHTML=ltxt2;
+
+
+disp_all_keys_1_3(lar3,1);
+
+
+/*
+<div id="keyb_id3" class="keyb_div_class3">
+kb3 div text
+
+
+</div>
+*/
+
+
+
+}
+//==
+
+function set_ajax_reply_box(ltxt2){
+
+
+
+document.forms["ajax_rep_form3"]["form_area_txt3"].value=ltxt2;
+
+
+
+}
+
+//==
+
+var glb_arg1;
+var glb_arg2;
+
+
+function get_arg1_3(){
+var res;
+
+res=document.forms["test_form"]["arg1"].value;
+res=1.0*res;
+glb_arg1=res;
+
+res=document.forms["test_form"]["arg2"].value;
+res=1.0*res;
+glb_arg2=res;
+
+
+}
+
+//==
+/*
+index and crunch
+*/
+
+function cr_str_obj1(){
+this.str1=null;
+this.nl_yes=0;
+
+return(this);
+
+
+}
+
+//==
+
+function cr_str_obj2(){
+var res;
+
+res=new cr_str_obj1();
+return(res);
+}
+
+//==
+
+function chk_ar_max1(xsz){
+;
+if(xsz>=10000){
+
+sys_err('xsz too large in chk_ar_max1');
+}
+
+}
+
+//==
+function set_debug_rep(ltxt){
+var z;
+
+
+z=document.getElementById("test_txt1");
+/*
+ltxt=disp_edit_div3(line_org,colnum3,rownum3);
+*/
+ltxt2='Debug Report:';
+ltxt2+='<br>';
+ltxt2+='\n';
+
+ltxt2+=ltxt;
+
+
+z.innerHTML=ltxt2;
+
+
+}
+//==
+
+function gen_arr3(nn,sw){
+var x;
+
+var lar;
+
+lar= new Array;
+x=0;
+while(x<nn){
+lar[x]=3+(x/1000);
+x++;
+}
+return(lar);
+
+
+
+
+}
+
+//==
+
+function disp_lar(lar3){
+var x;
+var xlen;
+
+var ltxt;
+var dbsw;
+
+dbsw=true;
+
+
+ltxt='';
+ltxt+='dump of array:';
+ltxt+='<br>';
+ltxt+='\n';
+
+x=0;
+xlen=lar3.length;
+
+while(x<xlen){
+if(dbsw){
+ltxt+='x=';
+ltxt+=x;
+ltxt+=', lar3[x]=';
+ltxt+=lar3[x];
+ltxt+='<br>';
+ltxt+='\n';
+}
+
+x++;
+}
+ltxt+='<br>';
+ltxt+='\n';
+ltxt+='end of dump of array:';
+
+ltxt+='<br>';
+ltxt+='\n';
+return(ltxt);
+}
+
+//==
+function zslide_ar_tst1(cd1){
+
+var lar3;
+var ltxt;
+
+var pos;
+var zoffs;
+
+ltxt='';
+
+get_arg1_3();
+
+pos=0;
+zoffs=0;
+
+if(cd1==0){
+lar3=gen_arr3(15,0);
+
+ltxt+=disp_lar(lar3);
+
+/*
+zslide_ar(lar3,pos,zoffs);
+
+*/
+
+
+}else
+
+if(cd1==1){
+lar3=gen_arr3(15,0);
+
+ltxt+=disp_lar(lar3);
+
+
+
+pos=5;
+zoffs=5;
+
+
+ltxt+=zslide_ar(lar3,pos,zoffs);
+
+ltxt+=disp_lar(lar3);
+
+
+
+
+}
+else
+if(cd1==3){
+lar3=gen_arr3(15,0);
+
+ltxt+=disp_lar(lar3);
+
+pos=glb_arg1;
+zoffs=glb_arg2;
+
+ltxt+=zslide_ar(lar3,pos,zoffs);
+
+ltxt+=disp_lar(lar3);
+
+
+}
+else {
+
+sys_err('disallowed value of sw in zslide_ar_tst1');
+}
+
+
+set_debug_rep(ltxt);
+
+
+}
+
+//==
+
+function zslide_ar(lar3,pos,zoffs){
+var x;
+var x2;
+var xlen;
+var xlen3;
+var xlen5;
+
+var ltxt;
+var dbsw;
+
+var x2_strt;
+
+
+dbsw=true;
+ltxt='';
+
+
+if(dbsw){
+ltxt+='doing:';
+
+ltxt+='zslide_ar:';
+
+ltxt+='<br>';
+ltxt+='\n';
+ltxt+='pos=';
+ltxt+=pos;
+ltxt+=', zoffs=';
+ltxt+=zoffs;
+ltxt+='<br>';
+ltxt+='\n';
+}
+
+
+xlen=lar3.length;
+
+if(xlen<0){
+sys_err('xlen <0 in zslide_ar');
+
+}
+
+if(zoffs<0){
+if((xlen+zoffs)<0){
+sys_err(' -ve slide value too large for array in zslide_ar');
+
+}
+
+/*
+-ve slide
+*/
+if(dbsw){
+ltxt+='<br>';
+ltxt+='\n';
+ltxt+='-ve slide';
+
+
+ltxt+='<br>';
+ltxt+='\n';
+}
+/*
+x=pos+(-1*zoffs)-1;
+*/
+
+x=pos;
+
+xlen3=xlen+zoffs;
+
+x2=xlen+zoffs;
+
+while(x<xlen3){
+
+if(dbsw){
+ltxt+='x=';
+ltxt+=x;
+ltxt+=', x2=';
+ltxt+=x2;
+ltxt+='<br>';
+ltxt+='\n';
+}
+
+lar3[x]=lar3[x2];
+
+x--;
+x2--;
+}
+/*
+if(dbsw){
+set_debug_rep(ltxt);
+}
+*/
+
+}
+else {
+
+if(dbsw){
+ltxt+='<br>';
+ltxt+='\n';
+ltxt+='+ve slide';
+
+
+ltxt+='<br>';
+ltxt+='\n';
+}
+
+
+chk_ar_max1(xlen+zoffs);
+
+/*
++ve slide
+*/
+
+x=0;
+x1=pos;
+
+x2=pos+zoffs;
+x2_strt=x2;
+/*
+xlen3=xlen+zoffs;
+*/
+xlen5=zoffs;
+
+while(x<xlen5){
+
+if(dbsw){
+ltxt+=', x=';
+ltxt+=x;
+ltxt+=', x1=';
+ltxt+=x1;
+ltxt+=', x2=';
+ltxt+=x2;
+ltxt+='<br>';
+ltxt+='\n';
+}
+
+lar3[x2]=lar3[x1];
+
+if(x1<x2_strt){
+ltxt+='no nullify src';;
+ltxt+='<br>';
+ltxt+='\n';
+
+
+lar3[x1]=null;
+}
+
+x++;
+x1++;
+x2++;
+}
+/*
+if(dbsw){
+set_debug_rep(ltxt);
+}
+*/
+
+
+}
+return(ltxt);
+}
+
+
+
+
+
+
+//==
+function zinit3(){
+
+
+do_tst_button_a1();
+set_ajax_reply_box('\n');
+}
+//==
+function do_tst_button_a1(){
+
+init_kb_sc3();
+
+test_keyb_disp1();
+
+}
+//==
+function disp_all_keys_1_3(lar3,sw){
+var x;
+
+var xlen;
+var txt;
+var ltxt;
+var lar5;
+
+
+txt='';
+txt+='<center>';
+
+txt+='\n';
+
+x=0;
+xlen=lar3.length;
+
+while(x<xlen){
+lar5=lar3[x];
+
+
+ltxt=disp_key_row1_3(lar5,x,sw);
+
+txt+=ltxt;
+x++;
+}
+txt+='</center>';
+txt+='\n';
+
+txt+='<br>';
+txt+='\n';
+
+return(txt);
+
+
+}
+
+
+//==
+
+function disp_key_row1_3(lar3,x1,sw){
+var x;
+
+var xlen;
+var txt;
+var ltxt;
+var lar5;
+
+
+txt='';
+
+x=0;
+xlen=lar3.length;
+
+while(x<xlen){
+lar5=lar3[x];
+
+
+ltxt=disp_key1_3(lar5,x1,x,sw);
+/*
+ltxt+='\n';
+*/
+txt+=ltxt;
+x++;
+}
+txt+='<br>';
+txt+='\n';
+
+return(txt);
+
+
+}
+
+
+//==
+
+function disp_key1_3(lar3,x1,x2,sw){
+
+var txt;
+
+var b_txt;
+var param_txt;
+var xlen;
+var cd1;
+var val1;
+var id_str1;
+
+var f_sz3;
+
+
+
+xlen=lar3.length;
+
+cd1='';
+val1=0;
+f_sz3=get_glob_font_sc3();
+
+
+if(xlen!=2){
+
+if(xlen==4){
+
+cd1=lar3[2];
+val1=lar3[3];
+
+
+
+}else {
+
+sys_err(' disallowed value of xlen in disp_key1_3');
+}
+}
+
+
+b_txt=lar3[0];
+param_txt=lar3[1];
+
+id_str1='lab_';
+id_str1+=x1;
+id_str1+='_';
+
+id_str1+=x2;
+
+
+
+txt='';
+txt+='<button id="';
+
+txt+=id_str1;
+
+txt+='" class="key_class1" onclick="do_key1(';
+txt+="'";
+
+
+txt+=param_txt;
+txt+="'";
+txt+=')">';
+txt+=b_txt;
+txt+='</button>';
+
+if(sw==0){
+return(txt);
+}
+
+else
+if(sw==1){
+
+
+
+
+z=document.getElementById(id_str1);
+
+
+z.style.fontSize=f_sz3+'pt';
+
+if(cd1!=''){
+if(cd1=='w'){
+z.style.width=val1+'px';
+
+
+}
+else
+if(cd1=='c'){
+z.style.color=val1;
+
+
+}
+else {
+sys_err('disallowed value of cd1 in ???');
+}
+}
+}
+else {
+
+sys_err('disallowed value of sw in ???');
+
+}
+
+
+
+}
+
+
+
+
+//==
+function get_line3(obj1,ind3){
+var txt;
+
+txt='';
+txt+='tst line:'
+txt+=ind3;
+
+return(txt);
+
+
+
+}
+
+//==
+function disp_chr_n3(chr1,nn){
+var x;
+var xlen;
+var ltxt;
+
+x=0;
+xlen=nn;
+
+ltxt='';
+
+while(x<xlen){
+ltxt+=chr1;
+
+
+x++;
+
+}
+
+return(ltxt);
+}
+//==
+function disp_edit_div3(line_org,colnum3,rownum3){
+
+var ltxt;
+var ltxt3;
+
+var txt;
+var x;
+var xlen;
+var obj1;
+var zlen;
+
+
+
+obj1=null;
+
+
+txt='';
+x=0;
+xlen=rownum3;
+
+
+while(x<xlen){
+ltxt=get_line3(obj1,line_org+x);
+ltxt+=': ';
+zlen=ltxt.length;
+ltxt3=disp_chr_n3(';', colnum3-zlen);
+ltxt+=ltxt3;
+
+
+
+txt+=ltxt;
+txt+='<br>';
+
+txt+='\n';
+
+x++;
+
+}
+
+return(txt);
+
+
+
+}
+
+//==
+
+function disp_edit_div3_2(line_org,colnum3,rownum3){
+var z;
+var ltxt;
+
+
+
+z=document.getElementById("edit_div_id3_2");
+
+ltxt=disp_edit_div3(line_org,colnum3,rownum3);
+
+z.innerHTML=ltxt;
+
+}
+
+//==
+
+function init_edit_div_box3(){
+
+var colnum3;
+var rownum3;
+
+var z;
+var ltxt;
+var left3;
+var top3;
+var line_org;
+
+
+colnum3=30;
+rownum3=50;
+
+
+line_org=320;
+
+
+z=document.getElementById("edit_div_box1");
+
+ltxt=edit_div_txt3(colnum3,rownum3);
+
+z.innerHTML=ltxt;
+left3=100;
+top3=100;
+
+set_params_edit_div3(left3,top3,colnum3,rownum3);
+
+disp_edit_div3_2(line_org,colnum3,rownum3);
+
+/*
+test_keyb_disp1();
+*/
+
+
+}
+//==
+
+
+
+function do_tst_button1(){
+
+init_edit_div_box3();
+
+}
+
+
+
+//==
+function edit_div_txt3(colnum3,rownum3){
+
+txt='';
+
+
+txt+='<div id="edit_div_id3" class="edit_div_class3">';
+txt+='<div id="edit_div_id3_2" class="edit_div_class3_2">';
+
+
+txt+='\n';
+
+
+txt+='<form id="edit_form_id3">';
+txt+='\n';
+txt+='edit_div_3_1 text\nline2\n';
+
+/*
+txt+='<textarea name="textarea3_1" ';
+
+
+txt+='cols="';
+txt+=colnum3;
+txt+='" rows="';
+txt+=rownum3;
+txt+='">\n';
+
+txt+='textarea3_1 text\nline2\n';
+
+
+txt+='</form>';
+txt+='\n';
+*/
+txt+='</div>';
+txt+='\n';
+
+txt+='</div>';
+txt+='\n';
+
+return(txt);
+
+
+}
+
+//==
+
+function show_hide_edit_div3(sw){
+
+
+z=document.getElementById("edit_div_id3");
+
+if(sw==1){
+z.style.visibility='visible';
+
+}else{
+z.style.visibility='hidden';
+
+}
+
+}
+
+
+
+
+
+//==
+
+
+function set_params_edit_div3(left3,top3,colnum3,rownum3){
+
+
+var lwidth;
+
+var lheight;
+var lwsc;
+var lhsc;
+var z;
+
+
+lwsc=10;
+lhsc=19;
+
+lwidth=lwsc*colnum3;
+lwidth+=10;
+
+lheight=lhsc*rownum3;
+lheight+=10;
+
+
+z=document.getElementById("edit_div_id3");
+
+
+z.style.left=left3+'px';
+z.style.top=top3+'px';
+
+z.style.width=(lwidth+30)+'px';
+
+z.style.height=(lheight+30)+'px';
+
+z=document.getElementById("edit_div_id3_2");
+
+z.style.width=lwidth+'px';
+
+z.style.height=lheight+'px';
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
